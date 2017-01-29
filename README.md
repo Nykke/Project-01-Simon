@@ -1,5 +1,5 @@
 Simon User Stories:
-User will be given the option of a timed or untimed game.
+User will be given the option of a timed or untimed game.<br />
 In the timed game, User will be scored, while in the untimed game no score will be collected.
 User will initialize the game by pressing the "Start" button.
 User will be able to pause game sequence after it has started by pressing the "Pause" button.
