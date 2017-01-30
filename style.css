@@ -27,8 +27,24 @@ body {
 }
 
 /*create a selector for flower container*/
+.wrapper {
+  display: flex;
+  flex-direction:column;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+}
+
+/*create selector for flower element*/
+.flower {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+
+}
 
 /*create a selector that makes the red petal a transparent 3D element*/
+
 
 /*create a selector that makes the blue petal a transparent 3D element*/
 
