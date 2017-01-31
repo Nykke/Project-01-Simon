@@ -31,27 +31,20 @@ $(document).ready(function() {
         var randomNum = sequenceArray[Math.floor(Math.random()*sequenceArray.length)];
         switch(randomNum){
           case 0:
-            $("#red").fadeOut(200).fadeIn(200);
+            $("#red").fadeOut(100).fadeIn(100);
             break;
           case 1:
-            $("#blue").fadeOut(200).fadeIn(200);
+            $("#blue").fadeOut(100).fadeIn(100);
             break;
           case 2:
-            $("#green").fadeOut(200).fadeIn(200);
+            $("#green").fadeOut(100).fadeIn(100);
             break;
           case 3:
-            $("#yellow").fadeOut(200).fadeIn(200);
+            $("#yellow").fadeOut(100).fadeIn(100);
             break;
           default:
             break;
         }
-        // var randomNum = sequenceArray[Math.floor(Math.random()*sequenceArray.length)];
-        //  for (i=0; i < petal.length; i++) {
-
-        //  }
-
-
-// while(x<1){
 
 }
 
