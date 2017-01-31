@@ -1,10 +1,16 @@
-//create function that changes scoreboard to add 10 points for each successful sequence
+//set up variables
+var start = "on";
+var pause = "hold";
+var petal = ["red", "blue", "yellow", "green"];
+var scoreboard = 0;
+var clock = "00:0";
+
 
 //create an event listener for start button to initialize first sequence when pressed
 
-document.getElementById("start").eventListener("click", function () {
-  document.getElementById("petal").style.background(changeColor); 
-});
+
+
+
 //create an event listener for pause button to stop game until pressed again or app is closed
 
 
@@ -39,3 +45,5 @@ document.getElementById("start").eventListener("click", function () {
 //create a function that stores scores
 
 //game will remember levels achieved and let user to continue where they left off
+
+//create function that changes scoreboard to add 10 points for each successful sequence
