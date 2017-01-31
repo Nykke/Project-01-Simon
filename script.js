@@ -13,6 +13,7 @@ $(document).ready(function() {
   var randomNum = 0;
   var sequenceArray=[];
   var x = 0;
+  userTurn = [];
 
 
 
@@ -26,7 +27,7 @@ $(document).ready(function() {
 
   //creates a random sequence
       function animatePetal() {
-        var sequenceArray = [0, 1, 2, 3, 3, 2, 1, 0, 2, 3, 1, 0, 3, 1, 2, 0, 0, 3, 1, 2, 1, 0, 3, 2, 1, 3, 2, 0];
+        var sequenceArray = [0, 1, 2, 3];
         console.log("sequence is up");
         var randomNum = sequenceArray[Math.floor(Math.random()*sequenceArray.length)];
         switch(randomNum){
@@ -45,8 +46,20 @@ $(document).ready(function() {
           default:
             break;
         }
-        simon.push(sequenceArray); 
+        simon.push(sequenceArray);
+
 }
+        function waitForUser () {
+          if (userTurn) {
+          $(".petal").on("click", function (){
+          $(".petal").attr("id");
+          attempt.push("color");
+          console.log("userpushed");
+        });
+        waitForUser(attempt.push());
+      }
+    }
+
 
 
 
@@ -58,8 +71,8 @@ $(document).ready(function() {
   //create an alert asking user if they will like to pay another game after losing
   //create an event listener for the alert that says 'yes' or 'no'
 
-  // var attempt = [];
-  // var turn = 1;
+  var attempt = [];
+  var turn = 1;
 
 
 
