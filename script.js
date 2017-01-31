@@ -45,7 +45,7 @@ $(document).ready(function() {
           default:
             break;
         }
-
+        simon.push(sequenceArray); 
 }
 
 
