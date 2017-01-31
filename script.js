@@ -1,8 +1,12 @@
 //create function that changes scoreboard to add 10 points for each successful sequence
 
+//create an event listener for start button to initialize first sequence when pressed
+
+document.getElementById("start").eventListener("click", function () {
+  document.getElementById("petal").style.background(changeColor); 
+});
 //create an event listener for pause button to stop game until pressed again or app is closed
 
-//create an event listener for start button to initialize first sequence when pressed
 
 //create a function that counts down from one minute when pressed
 
