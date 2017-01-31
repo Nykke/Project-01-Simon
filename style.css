@@ -62,6 +62,11 @@
   -webkit-border-radius:70px, 20px;
 }
 
+/*create style for when petals are active*/
+.petal:active {
+  opacity: .7; 
+}
+
 /*create a selector that makes the red petal*/
 #red {
   background: #F00;
