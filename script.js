@@ -5,8 +5,6 @@ $(document).ready(function(){
   console.log($);
 
   //set up variables
-  var start = "start";
-  var pause = "hold";
   var petal = ["red", "blue", "green", "yellow"];
   var scoreboard = 0;
   var clock = "00:00";
@@ -14,40 +12,46 @@ $(document).ready(function(){
 
 
 
+
   //create an event listener for start button to initialize first sequence when pressed
+  $("#start").click(function (){
+      console.log("simon is on");
+      animatePetal();
+  });
+
+
   //create an if statement that states when start button is hit that a random sequence will start
-    function animatePetal() {
-      var ocapcity = 0.7;
-      var tempo = 1000;
-          $("#start").on("click", function () {
-            $(".petal").css("background", ocapcity + tempo);
-              for (i = 0; i <= petal.length ; i++) {
-                console.log("petal");
-                return petal;
-              }
-      });
-  }
+    function animatePetal (){
+      $(".petal").on("click", function (){
+
+      })
+      $("this").fadeOut(200).fadeIn(200);
 
 
-  //create an event listener for pause button to stop game until pressed again or app is closed
+      //randomNum will be a random number in between 0 and 3
+      var randomNum = Math.floor(Math.random()*4);
+      for (i = 0; i <= petal.length ; i++){
+        console.log("petal");
+        return petal;
+      }
+    }
 
-  //
-  // //create an event listener that waits for user to hit a mirror sequence before running again
+
+   //create an event listener that waits for user to hit a mirror sequence before running again
+  //create a do while loop that waits and runs while user hits repeated sequence
 
 
-  // //create a function that counts down from one minute when pressed
-  //
-  // //create a function that turns timer off
-  //
-  // //create an alert asking user if they will like to pay another game after losing
-  // //create an event listener for the alert that says 'yes' or 'no'
 
-  var attempt = [];
-  var turn = 1;
+  //create an alert asking user if they will like to pay another game after losing
+  //create an event listener for the alert that says 'yes' or 'no'
 
-  
-  //
-  // if
+  // var attempt = [];
+  // var turn = 1;
+
+
+
+
+
 
 
   //create a do while loop that waits and runs while user hits repeated sequence
@@ -65,10 +69,13 @@ $(document).ready(function(){
 
 
 
-
+  //create a function that counts down from one minute when pressed
+  //create a function that turns timer off
 
    //create function that changes scoreboard to add 5 points for each successful sequence
   //create a for loop that adds 5 seconds to every 5 levels achieved as extra time to complete round
+
+  //create an event listener for pause button to stop game until pressed again or app is closed
 
 
   //create an event listener that waits for a sucessful completion of level to rotate petals before transition to next level
@@ -80,4 +87,4 @@ $(document).ready(function(){
 
   //game will remember levels achieved and let user to continue where they left off (level)
 
-// });
+});
