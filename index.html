@@ -7,10 +7,16 @@
   </head>
   <body>
     <main>
+    <!--create a sky-->
+    <div class ="sky-gradient">
+
       <!-- create scoreboard -->
-      <div id="scoreboard">
-        <div class="display">
-          <div class="digits"></div>
+      <div class="container">
+
+        <div id="scoreboard">
+          <div class="display">
+            <div class="digits"></div>
+          </div>
         </div>
       </div>
 
@@ -18,38 +24,36 @@
       <div class="wrapper">
 
       <!-- create flower element -->
-        <div class="flower"></div>
+        <div class="flower">
 
       <!-- create right red petal -->
-        <div class="petal" id="red"></div>
+          <div class="petal" id="red"></div>
 
       <!-- create bottom blue petal -->
-        <div class="petal" id="blue"></div>
+          <div class="petal" id="blue"></div>
 
-        <!-- create a non responsive center -->
-         <div id="center">Simon</div>
+          <!-- create a non responsive center -->
+            <div id="center">Simon</div>
 
-      <!-- create left yellow petal -->
-        <div class="petal" id="yellow"></div>
+      <!-- create bottom left yellow petal -->
+          <div class="petal" id="yellow"></div>
 
        <!-- create top green petal -->
-        <div class="petal" id="green"></div>
-
-       <!-- create a non responsive center -->
-        <div id="center"></div>
-
-       </div>
+          <div class="petal" id="green"></div>
 
       <!-- create stem -->
-      <div class="stem"></div>
+          <div class="stem">
+            <!-- create right green leaf -->
+                <div class="leaf" id="right"></div>
 
-      <!-- create right green leaf -->
-      <div class="leaf" id="right"></div>
+            <!-- create left green leaf -->
+                <div class="leaf" id="left"></div>
+          </div>
+        </div>
 
-      <!-- create left green leaf -->
-      <div class="leaf" id="left"></div>
 
-       <!-- create pause button -->
+       <div id="button-container">
+            <!-- create pause button -->
        <button type="button" name="button">PAUSE</button>
 
        <!-- create start button -->
@@ -62,7 +66,8 @@
             <div class="digits"></div>
           </div>
         </div>
-
+      </div>
+      </div>
 
     </main>
     <script type="text/javascript" href="script.js"> </script>
