@@ -3,7 +3,7 @@ var start = "on";
 var pause = "hold";
 var petal = ["red", "blue", "yellow", "green"];
 var scoreboard = 0;
-var clock = "00:0";
+var clock = "00:00";
 
 
 //create an event listener for start button to initialize first sequence when pressed
