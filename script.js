@@ -22,19 +22,17 @@ $(document).ready(function(){
 
   //create an if statement that states when start button is hit that a random sequence will start
     function animatePetal (){
-      $(".petal").on("click", function (){
-
-      })
-      $("this").fadeOut(200).fadeIn(200);
+      $(".petal").fadeOut(200).fadeIn(200);
+    }
 
 
       //randomNum will be a random number in between 0 and 3
-      var randomNum = Math.floor(Math.random()*4);
-      for (i = 0; i <= petal.length ; i++){
-        console.log("petal");
-        return petal;
-      }
-    }
+    //   var randomNum = Math.floor(Math.random()*4);
+    //   for (i = 0; i <= petal.length ; i++){
+    //     console.log("petal");
+    //     return petal;
+    //   }
+    // }
 
 
    //create an event listener that waits for user to hit a mirror sequence before running again
