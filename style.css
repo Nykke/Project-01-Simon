@@ -1,15 +1,21 @@
-body {
-  background: #2281EF;
+.sky-gradient {
+  background: linear-gradient(#279CF3, #DCD9CD);
+  height: 850px;
+  width: 1440px;
 }
 
 /*make scoreboard that displays number in digital format*/
 #scoreboard {
-  background: #000;
-  height: 50%;
-  width: 10%;
-  margin: 0 auto;
+  background: #FDBC40;
+  height: 90px;
+  width: 167px;
+  margin: 0 10px;
   padding: 30px 10px;
   position: relative;
+  float: right;
+  border-radius: 80px 70px;
+  top: 40px;
+
 }
 
 .display {
@@ -29,7 +35,7 @@ body {
 /*create a selector for flower container*/
 .wrapper {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
   position: relative;
@@ -37,46 +43,144 @@ body {
 
 /*create selector for flower element*/
 .flower {
-  position: absolute;
+  position: relative;
   width: 200px;
   height: 300px;
-
+  left: 620px;
+  top: 320px;
 }
 
-/*create a selector that makes the red petal a transparent 3D element*/
+/*create a selector for all petals to make 3D*/
+.petal {
+  height: 100px;
+  width: 280px;
+  position: absolute;
+  margin: 2px 0;
+  border-radius: 70px 20px;
+  -ms-border-radius: 70px, 20px;
+  -webkit-border-radius:70px, 20px;
+}
+
+/*create a selector that makes the red petal*/
 #red {
   background: #F00;
+  transform: rotate(310deg);
+  transform-origin: 0 0;
+  box-shadow: 5px 5px 3px #8B0000;
 
 }
 
-/*create a selector that makes the blue petal a transparent 3D element*/
+/*create a selector that makes the blue petal*/
 #blue {
   background: #00F;
+  transform: rotate(30deg);
+  transform-origin: 1 0;
+  box-shadow: 5px 5px 3px #00008B;
 
 }
 
-/*create a selector that makes the yellow petal a transparent 3D element*/
+/*create a selector that makes the yellow petal*/
 #yellow {
   background: #FF0;
+  transform: rotate(-220deg);
+  transform-origin: -5% -1%;
+  box-shadow: 5px 5px 3px #DAA520;
 
 }
-/*create a selector that makes the green petal a transparent 3D element*/
+/*create a selector that makes the green petal*/
 #green {
-  background: #006400; 
+  background: #006400;
+  transform: rotate(-510deg);
+  transform-origin: 0 0;
+  box-shadow: 5px 5px 3px #2E8B57;
 
 }
-/*create a selector that rotates the flower petals element but only when it's a new level*/
+
+/*create the center circle*/
+#center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F3642D;
+  position: relative;
+  height: 80px;
+  width: 86px;
+  border-radius: 50px;
+  -ms-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  color: #000;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  right: 28px; 
+
+}
 
 /*create a selector for the flower stem*/
+.stem {
+  background: #008000;
+  height: 470px;
+  width: 36px;
+}
 
-/*create selector for leaves that colors  */
+/*create selector for leaves with the color of green */
+
+.leaf {
+  background: #008000;
+  height: 50px;
+  width: 135px;
+  border-radius: 50px 3px;
+  -ms-border-radius: 50px, 3px;
+  -webkit-border-radius: 50px, 3px;
+  position: relative;
+  top: 280px;
+
+
+}
+
+/*display left leaf at the bottom of stem, on the left side*/
+#left {
+  transform: rotate(-163deg);
+  transform-origin: 0 0;
+
+}
+
+/*display right lead at the bottom of stem, on the right side*/
+#right {
+  transform: rotate(-34deg);
+  transform-origin: 0 0;
+}
+
+/*format button container*/
+#button-container {
+  display: flex;
+  flex-direction: row;
+  z-index:
+}
+
 
 /*make a 3D pause button */
-
 /*make a 3D start button*/
+button {
+  background: #9C6F39;
+  padding: 25px;
+  margin: 15px;
+  color: #000;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 
 /*make a 3D timer object */
 /*time object has a switch that changes from timed to off*/
 
+/*create footer*/
+footer {
+  font-family: sans-serif;
+  font-size: 12px;
+
+}
 
 /*create mobile options*/
