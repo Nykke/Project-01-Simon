@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
 //test console
   console.log("hello simon");
@@ -9,6 +9,10 @@ $(document).ready(function(){
   var scoreboard = 0;
   var clock = "00:00";
   var level = 1;
+  var simon = [];
+  var randomNum = 0;
+  var sequenceArray=[];
+  var x = 0;
 
 
 
@@ -20,19 +24,37 @@ $(document).ready(function(){
   });
 
 
-  //create an if statement that states when start button is hit that a random sequence will start
-    function animatePetal (){
-      $(".petal").fadeOut(200).fadeIn(200);
-    }
+  //creates a random sequence
+      function animatePetal() {
+        var sequenceArray = [0, 1, 2, 3, 3, 2, 1, 0, 2, 3, 1, 0, 3, 1, 2, 0, 0, 3, 1, 2, 1, 0, 3, 2, 1, 3, 2, 0];
+        console.log("sequence is up");
+        var randomNum = sequenceArray[Math.floor(Math.random()*sequenceArray.length)];
+        switch(randomNum){
+          case 0:
+            $("#red").fadeOut(200).fadeIn(200);
+            break;
+          case 1:
+            $("#blue").fadeOut(200).fadeIn(200);
+            break;
+          case 2:
+            $("#green").fadeOut(200).fadeIn(200);
+            break;
+          case 3:
+            $("#yellow").fadeOut(200).fadeIn(200);
+            break;
+          default:
+            break;
+        }
+        // var randomNum = sequenceArray[Math.floor(Math.random()*sequenceArray.length)];
+        //  for (i=0; i < petal.length; i++) {
+
+        //  }
 
 
-      //randomNum will be a random number in between 0 and 3
-    //   var randomNum = Math.floor(Math.random()*4);
-    //   for (i = 0; i <= petal.length ; i++){
-    //     console.log("petal");
-    //     return petal;
-    //   }
-    // }
+// while(x<1){
+
+}
+
 
 
    //create an event listener that waits for user to hit a mirror sequence before running again
