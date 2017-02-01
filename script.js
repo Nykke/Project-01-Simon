@@ -4,7 +4,7 @@ $(document).ready(function() {
   console.log("hello simon");
   console.log($);
 
-  //set up variables
+//set up variables
   var petal = ["red", "blue", "green", "yellow"];
   var scoreboard = 0;
   var clock = "00:00";
@@ -14,18 +14,19 @@ $(document).ready(function() {
   var sequenceArray=[];
   var x = 0;
   var userTurn = [];
+  var clickedPetal =[];
 
 
 
 
-  //create an event listener for start button to initialize first sequence when pressed
+//create an event listener for start button to initialize first sequence when pressed
   $("#start").click(function (){
       console.log("simon is on");
       animatePetal();
   });
 
 
-  //creates a random sequence
+//creates a random sequence
       function animatePetal() {
         var sequenceArray = [0, 1, 2, 3];
         console.log("sequence is up");
@@ -45,23 +46,28 @@ $(document).ready(function() {
             break;
           default:
             break;
-        }
+         }
         simon.push(sequenceArray);
-
-}
+      }
 
 //create an event listener that waits for user to hit a mirror sequence before running again
 
           if (userTurn) {
-          $(".petal").on("click", function (){
-          $(".petal").attr("id");
+          clickedPetal.on("click",function (){
+          $("this").hasClass("on");
           console.log("userpushed");
-          return attempt.push(petal);
+          return attempt.push($("this"));
         });
       }
 
 //create a do while loop that waits and runs while user hits repeated sequence
 
+      if (userTurn === false) {
+        simon.push(sequenceArray);
+        // for ( i=0; i< petal.length, i++){
+        //
+        // }
+      }
 
 
   //create an alert asking user if they will like to pay another game after losing
