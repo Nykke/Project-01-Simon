@@ -11,10 +11,10 @@ $(document).ready(function() {
   var level = 1;
   var simon = [];
   var randomNum = 0;
-  var sequenceArray=[];
-  var x = 0;
+  var sequenceArray = [0, 1, 2, 3];
   var userTurn = [];
-  var clickedPetal =[];
+  var clickedPetal;
+  var attempt =[]; 
 
 
 
@@ -33,66 +33,72 @@ $(document).ready(function() {
         var randomNum = sequenceArray[Math.floor(Math.random()*sequenceArray.length)];
         switch(randomNum){
           case 0:
-            $("#red").fadeOut(100).fadeIn(100);
+            $("#red").fadeOut(1000).fadeIn(1000);
             break;
           case 1:
-            $("#blue").fadeOut(100).fadeIn(100);
+            $("#blue").fadeOut(1000).fadeIn(1000);
             break;
           case 2:
-            $("#green").fadeOut(100).fadeIn(100);
+            $("#green").fadeOut(1000).fadeIn(1000);
             break;
           case 3:
-            $("#yellow").fadeOut(100).fadeIn(100);
+            $("#yellow").fadeOut(1000).fadeIn(1000);
             break;
           default:
             break;
          }
-        simon.push(sequenceArray);
-      }
+        simon.push(randomNum);
+
+}
+
+
+      //     for (i=0; i< sequenceArray.length, i++) {
+      //
+      //  }
+
 
 //create an event listener that waits for user to hit a mirror sequence before running again
 
           if (userTurn) {
-          clickedPetal.on("click",function (){
+          $(".petal").on("click", function (clickedPetal){
           $("this").hasClass("on");
           console.log("userpushed");
           return attempt.push($("this"));
         });
       }
 
+//create an event listener for the alert that says 'Incorrect'
+      function lose () {
+      if (randomNum.length!== clickedPetal.length){
+          alert("INCORRECT!");
+
+      // } else if (sequenceArray[1] !==1){
+      //     alert("INCORRECT!");
+      //
+      // } else if (sequenceArray[2] !==2){
+      //     alert("INCORRECT!");
+      //
+      // } else if (sequnceArray[3] !==3){
+      //     alert("INCORRECT!");
+      //
+      // }  else{
+      //   clickedPetal();
+      }
+    }
+
 //create a do while loop that waits and runs while user hits repeated sequence
 
-      if (userTurn === false) {
-        simon.push(sequenceArray);
-        // for ( i=0; i< petal.length, i++){
-        //
-        // }
-      }
-
-
-  //create an alert asking user if they will like to pay another game after losing
-  //create an event listener for the alert that says 'yes' or 'no'
-
-  var attempt = [];
-  var turn = 1;
 
 
 
 
 
 
-
-  //create a do while loop that waits and runs while user hits repeated sequence
 
   //create a switch statement that adds one more random sequence to each new level
 
 
   //create a for loop that runs within each level with new sequences
-
-
-  //create an if, elseif, else statement that says 'if user hits incorrect sequence, game alerts a "wrong buzz" and ends'.
-
-
 
 
 
@@ -105,9 +111,7 @@ $(document).ready(function() {
 
   //create an event listener for pause button to stop game until pressed again or app is closed
 
-
   //create an event listener that waits for a sucessful completion of level to rotate petals before transition to next level
-
 
   //create an if, else statement that says 'if user clicks "yes" previous level will restart, if "no", box will close and go back to "home".'
 
