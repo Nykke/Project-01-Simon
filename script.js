@@ -14,9 +14,7 @@ $(document).ready(function() {
   var sequenceArray = [0, 1, 2, 3];
   var userTurn = [];
   var clickedPetal;
-  var attempt =[]; 
-
-
+  var attempt =[];
 
 
 //create an event listener for start button to initialize first sequence when pressed
@@ -52,11 +50,6 @@ $(document).ready(function() {
 }
 
 
-      //     for (i=0; i< sequenceArray.length, i++) {
-      //
-      //  }
-
-
 //create an event listener that waits for user to hit a mirror sequence before running again
 
           if (userTurn) {
@@ -66,6 +59,17 @@ $(document).ready(function() {
           return attempt.push($("this"));
         });
       }
+
+
+//create a do while loop that waits and runs while user hits repeated sequence
+          var continueGame = (animatePetal(sequenceArray));
+          var i=0;
+            do {
+              i< sequenceArray.length + i;
+              i++;
+            }
+            while(i<4);
+
 
 //create an event listener for the alert that says 'Incorrect'
       function lose () {
@@ -86,22 +90,16 @@ $(document).ready(function() {
       }
     }
 
-//create a do while loop that waits and runs while user hits repeated sequence
 
 
 
 
 
 
-
-
+//_____________________________________
   //create a switch statement that adds one more random sequence to each new level
 
-
   //create a for loop that runs within each level with new sequences
-
-
-
 
   //create a function that counts down from one minute when pressed
   //create a function that turns timer off
