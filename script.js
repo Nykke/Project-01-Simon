@@ -59,12 +59,18 @@ $(document).ready(function() {
           return attempt.push($("this"));
         });
       }
+      // var i=0;
+      // while(i<10){
+      //   animatePetal(sequenceArray);
+      //   i++;
+      // }
 
 
 //create a do while loop that waits and runs while user hits repeated sequence
           var continueGame = (animatePetal(sequenceArray));
           var i=0;
             do {
+              animatePetal(sequenceArray);
               i< sequenceArray.length + i;
               i++;
             }
