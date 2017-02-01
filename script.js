@@ -13,7 +13,7 @@ $(document).ready(function() {
   var randomNum = 0;
   var sequenceArray=[];
   var x = 0;
-  userTurn = [];
+  var userTurn = [];
 
 
 
@@ -49,22 +49,18 @@ $(document).ready(function() {
         simon.push(sequenceArray);
 
 }
-        function waitForUser () {
+
+//create an event listener that waits for user to hit a mirror sequence before running again
+
           if (userTurn) {
           $(".petal").on("click", function (){
           $(".petal").attr("id");
-          attempt.push("color");
           console.log("userpushed");
+          return attempt.push(petal);
         });
-        waitForUser(attempt.push());
       }
-    }
 
-
-
-
-   //create an event listener that waits for user to hit a mirror sequence before running again
-  //create a do while loop that waits and runs while user hits repeated sequence
+//create a do while loop that waits and runs while user hits repeated sequence
 
 
 
