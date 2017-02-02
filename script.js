@@ -4,6 +4,8 @@ $(document).ready(function() {
   console.log("hello simon");
   console.log($);
 
+
+//I like how you declared your variables up here so you can access them within functions
 //set up variables
   var petal = ["red", "blue", "green", "yellow"];
   var scoreboard = 0;
@@ -26,6 +28,7 @@ $(document).ready(function() {
 
 //creates a random sequence
       function animatePetal() {
+        //do you need to declare the variable again (sequenceArray)since it is at the top and you're not reassigning it?
         var sequenceArray = [0, 1, 2, 3];
         console.log("sequence is up");
         var randomNum = sequenceArray[Math.floor(Math.random()*sequenceArray.length)];
