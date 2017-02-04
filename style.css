@@ -56,7 +56,6 @@
   height: 100px;
   width: 280px;
   position: absolute;
-  margin: 2px 0;
   border-radius: 70px 20px;
   -ms-border-radius: 70px, 20px;
   -webkit-border-radius:70px, 20px;
@@ -71,7 +70,11 @@
 #red {
   background: #F00;
   transform: rotate(310deg);
+  -webkit-transform: rotate(310deg);
+  -moz-transform: rotate(310deg);
   transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
   box-shadow: 5px 5px 3px #8B0000;
   right: -20px;
   top: -10px;
@@ -81,7 +84,11 @@
 #blue {
   background: #00F;
   transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
   transform-origin: 1 0;
+  -webkit-transform-origin: 1 0;
+  -moz-transform-origin: 1 0;
   box-shadow: 5px 5px 3px #00008B;
   left: 16px;
   top: 34px;
@@ -91,7 +98,11 @@
 #yellow {
   background: #FF0;
   transform: rotate(-220deg);
+  -webkit-transform: rotate(-220deg);
+  -moz-transform: rotate(-220deg);
   transform-origin: -5% -1%;
+  -webkit-transform-origin: -5% -1%;
+  -moz-transform-origin: -5% -1%;
   box-shadow: 5px 5px 3px #DAA520;
   left: 48px;
   bottom: 102px;
@@ -102,7 +113,11 @@
 #green {
   background: #006400;
   transform: rotate(-510deg);
+  -webkit-transform: rotate(-510deg);
+  -moz-transform: rotate(-510deg);
   transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
   box-shadow: 5px 5px 3px #2E8B57;
   right: -24px;
   top: 90px;
@@ -155,13 +170,21 @@
 /*display left leaf at the bottom of stem, on the left side*/
 #left {
   transform: rotate(-163deg);
+  -webkit-transform: rotate(-163deg);
+  -moz-transform: rotate(-163deg);
   transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
 }
 
 /*display right lead at the bottom of stem, on the right side*/
 #right {
   transform: rotate(-34deg);
+  -webkit-transform: rotate(-34deg);
+  -moz-transform: rotate(-34deg);
   transform-origin: 0 0;
+  -webkit-transform-origin: 0 0
+  -moz-transform-origin: 0 0;
 }
 
 /*format button container*/
