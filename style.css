@@ -63,7 +63,7 @@
 
 /*create style for when petals are active*/
 .petal:active {
-  opacity: .7;
+  opacity: 0.4;
 }
 
 /*create a selector that makes the red petal*/

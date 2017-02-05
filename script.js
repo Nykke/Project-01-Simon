@@ -12,9 +12,8 @@ $(document).ready(function() {
   var simon = [];
   var randomNum = 0;
   var sequenceArray = [0, 1, 2, 3];
-  var userTurn = [];
-  var clickedPetal;
   var attempt =[];
+  var userTurn = false;
 
 
 //create an event listener for start button to initialize first sequence when pressed
@@ -41,60 +40,43 @@ $(document).ready(function() {
           default:
             break;
          }
-
+      simon.push(randomNum);
 });
 
 
 //create an event listener that waits for user to hit a mirror sequence before running again
+          var clickedPetal = 0;
+          var nextClickedPetal = function (){
+            if (userTurn = true) {
+              $(".petal").on("click", function (){
+                console.log("userpushed");
 
-          if (userTurn) {
-          $(".petal").on("click", function (clickedPetal){
-          $("this").hasClass("on");
-          console.log("userpushed");
-          return attempt.push($("this"));
-        });
-      }
-      // var i=0;
-      // while(i<10){
-      //   animatePetal(sequenceArray);
-      //   i++;
-      // }
-
+              });
+        //  clickedPetal(attempt.push(this));
+          }
+          nextClickedPetal();
+      };
 
 //create a do while loop that waits and runs while user hits repeated sequence
-          var continueGame = (animatePetal(sequenceArray));
-          var i=0;
-            do {
-              animatePetal(sequenceArray);
-              i< sequenceArray.length + i;
-              i++;
-            }
-            while(i<4);
+          var continueGame = function () {
+
+            var i=0;
+              do {
+                i > sequenceArray.length + i;
+                i++;
+              }
+              while( i < 5);
+
+          };
 
 
 //create an event listener for the alert that says 'Incorrect'
       function lose () {
-      if (randomNum.length!== clickedPetal.length){
+        if (clickedPetal !== randomNum.length){
           alert("INCORRECT!");
-
-      // } else if (sequenceArray[1] !==1){
-      //     alert("INCORRECT!");
-      //
-      // } else if (sequenceArray[2] !==2){
-      //     alert("INCORRECT!");
-      //
-      // } else if (sequnceArray[3] !==3){
-      //     alert("INCORRECT!");
-      //
-      // }  else{
-      //   clickedPetal();
       }
+      lose();
     }
-
-
-
-
-
 
 
 //_____________________________________
