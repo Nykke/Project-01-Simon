@@ -20,15 +20,11 @@ $(document).ready(function() {
 //create an event listener for start button to initialize first sequence when pressed
   $("#start").click(function (){
       console.log("simon is on");
-      animatePetal();
-  });
-
 
 //creates a random sequence
-      function animatePetal() {
         var sequenceArray = [0, 1, 2, 3];
         console.log("sequence is up");
-        var randomNum = sequenceArray[Math.floor(Math.random()*sequenceArray.length)];
+        var randomNum = sequenceArray[Math.floor(Math.random() * 4)];
         switch(randomNum){
           case 0:
             $("#red").fadeOut(1000).fadeIn(1000);
@@ -45,9 +41,8 @@ $(document).ready(function() {
           default:
             break;
          }
-        simon.push(randomNum);
 
-}
+});
 
 
 //create an event listener that waits for user to hit a mirror sequence before running again
