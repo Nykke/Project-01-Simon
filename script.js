@@ -1,6 +1,40 @@
+$(document).ready(function(){
+//test console
+  // console.log($);
+
 //BRONZE
-//player should be able to hit the start button ONLY to start Simon game
-//once the game has started user should be able to see one random petal light up
+  //player should be able to hit the start button ONLY to start Simon game
+  //once the game has started user should be able to see one random petal light up
+
+  //event listener for start button to initialize first sequence when pressed
+  $("#start").click(function (){
+      console.log("simon is on");
+
+  //random petal selection sequence
+    var sequenceArray = [0, 1, 2, 3];
+      console.log("sequence is up");
+    var randomNum = sequenceArray[Math.floor(Math.random() * 4)];
+    switch(randomNum){
+      case 0:
+        $("#red").fadeOut(1000).fadeIn(1000);
+        break;
+      case 1:
+        $("#blue").fadeOut(1000).fadeIn(1000);
+        break;
+      case 2:
+        $("#green").fadeOut(1000).fadeIn(1000);
+        break;
+      case 3:
+        $("#yellow").fadeOut(1000).fadeIn(1000);
+        break;
+      default:
+        break;
+   }
+
+    });
+});
+
+
 //after the random petal lights up, user should be able to click on the same petal triggering a response
 //responses: 1) same pattern, the game continues; 2) incorrect pattern, the game ends
 //for each correct response the game should be able to repeat the previous correct pattern with AN ADDITIONAL pattern/color
