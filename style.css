@@ -1,7 +1,7 @@
 .sky-gradient {
   background: linear-gradient(#279CF3, #DCD9CD);
   height: 860px;
-  width: 1440px;
+  width: 100vw;
 }
 
 /*make scoreboard that displays number in digital format*/
@@ -235,7 +235,8 @@ footer {
   font-family: sans-serif;
   font-size: 12px;
   background: #9C6F39;
+  width: 100vw;
+  height: 20px;
   color: #FFF;
+  font-size: 13px;
 }
-
-/*create mobile options*/
