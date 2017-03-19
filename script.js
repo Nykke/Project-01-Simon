@@ -70,14 +70,14 @@ $(document).ready(function(){
  function continueGame() {
    if (simonSequence.length == playerSequence.length) {
      addNextPetal();
-     setTimeOut(petalSequence, 2000);
+
    } else {
        alert("INCORRECT, GAME OVER!");
        audioIncorrect.play();
    }
 
    function addNextPetal() {
-     simonSequence.push(randomNum);
+     simonSequence.push([Math.floor(Math.random() * 5)]);
    }
 
  //for each correct response the game should be able to repeat the previous correct pattern with AN ADDITIONAL pattern/color
@@ -89,7 +89,7 @@ $(document).ready(function(){
    }
  }
 
-
+continueGame();
 
 
 
