@@ -25,7 +25,7 @@ $(document).ready(function(){
   $("#start").click(function (){
       console.log("simon is on");
 
-    //timer
+    //start timer
     function updateClock(){
       seconds++;
       $("#clock").html(seconds);
@@ -33,8 +33,15 @@ $(document).ready(function(){
 
     clockId = setInterval(updateClock, 1000);
 
+    //pause timer
+    $("#pause").click(function() {
+      clearInterval(clockId);
+    });
+
+
       simonSequence = [];
       playerSequence = [];
+
 
   //random petal selection sequence
     var sequenceArray = [0, 1, 2, 3];
@@ -57,6 +64,8 @@ $(document).ready(function(){
         break;
    }
 
+ continueGame();
+
  });
 
  //after the random petal lights up, user should be able to click on the same petal triggering a response
@@ -64,10 +73,10 @@ $(document).ready(function(){
  function continueGame() {
    if (simonSequence.length == playerSequence.length) {
      addNextPetal();
+     $("#petal").html(petalSequence + playerSequence.length);
 
    } else {
-       alert("INCORRECT, GAME OVER!");
-       audioIncorrect.play();
+       alert("INCORRECT, GAME OVER!") && audioIncorrect.play();
    }
 
    function addNextPetal() {
@@ -82,9 +91,6 @@ $(document).ready(function(){
 
    }
  }
-
-continueGame();
-
 
 
 }); //end of document ready
