@@ -32,7 +32,27 @@ $(document).ready(function(){
    }
 
     });
-});
+
+  //after the random petal lights up, user should be able to click on the same petal triggering a response
+  //responses: 1) same pattern, the game continues; 2) incorrect pattern, the game ends
+  petals.each(["red", "blue", "green", "yellow"], function (clickedPetal){
+
+
+  });
+  var clickedPetal = [];
+    var simon = function play() {
+      var times = 12;
+        for (i = 0; i < 12; i++){
+          return play;
+        }
+      };
+       petals.push(clickedPetal);
+
+
+
+
+
+}); //end of document ready
 
 
 //after the random petal lights up, user should be able to click on the same petal triggering a response
