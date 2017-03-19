@@ -35,29 +35,23 @@ $(document).ready(function(){
 
       simonSequence = [];
       playerSequence = [];
-      addNextPetal();
-      petalSequence();
 
   //random petal selection sequence
     var sequenceArray = [0, 1, 2, 3];
       console.log("sequence is up");
-    var randomNum = sequenceArray[Math.floor(Math.random() * 5)];
+    var randomNum = sequenceArray[Math.floor(Math.random() * 4)];
     switch(randomNum){
       case 0:
-        $("#red").fadeOut(1000).fadeIn(1000);
-        audio[1].play();
+        $("#red").fadeOut(1000).fadeIn(1000) && audio[1].play();
         break;
       case 1:
-        $("#blue").fadeOut(1000).fadeIn(1000);
-        audio[2].play();
+        $("#blue").fadeOut(1000).fadeIn(1000) && audio[2].play();
         break;
       case 2:
-        $("#green").fadeOut(1000).fadeIn(1000);
-        audio[3].play();
+        $("#green").fadeOut(1000).fadeIn(1000) && audio[3].play();
         break;
       case 3:
-        $("#yellow").fadeOut(1000).fadeIn(1000);
-        audio[4].play();
+        $("#yellow").fadeOut(1000).fadeIn(1000) && audio[4].play();
         break;
       default:
         break;
@@ -77,7 +71,7 @@ $(document).ready(function(){
    }
 
    function addNextPetal() {
-     simonSequence.push([Math.floor(Math.random() * 5)]);
+     simonSequence.push([Math.floor(Math.random() * 4)]);
    }
 
  //for each correct response the game should be able to repeat the previous correct pattern with AN ADDITIONAL pattern/color
