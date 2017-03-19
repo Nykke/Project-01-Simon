@@ -64,7 +64,6 @@ $(document).ready(function(){
         break;
    }
 
- continueGame();
 
  });
 
@@ -72,26 +71,25 @@ $(document).ready(function(){
  //responses: 1) same pattern, the game continues; 2) incorrect pattern, the game ends
  function continueGame() {
    if (simonSequence.length == playerSequence.length) {
-     addNextPetal();
-     $("#petal").html(petalSequence + playerSequence.length);
-
+     console.log("clicked");
+     var nextPetal = function addNextPetal() {
+       simonSequence.push([Math.floor(Math.random() * 4)]);
+       console.log("new sequence added!")
+       //display the sequence to player
+       $("#petal").html(petalSequence);
+     }
    } else {
        alert("INCORRECT, GAME OVER!") && audioIncorrect.play();
    }
-
-   function addNextPetal() {
-     simonSequence.push([Math.floor(Math.random() * 4)]);
-   }
-
  //for each correct response the game should be able to repeat the previous correct pattern with AN ADDITIONAL pattern/color
-   function petalSequence(){
+   var petalSequence = function petalSequence(){
      for (var i = 0; i < simonSequence.length; i++){
+       console.log("sequence running!")
 
      }
 
    }
  }
-
 
 }); //end of document ready
 
