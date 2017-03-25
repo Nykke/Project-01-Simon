@@ -88,11 +88,26 @@ function playerClick(){
     playerSequence.push($(this).attr("id"));
     console.log(playerSequence);
     //creates the fadeout/fadein on the petal when clicked by player
-    $(this).fadeOut(1000).fadeIn(1000);
+    $(this).fadeOut(500).fadeIn(500);
     sequenceCheck();
 
   }
   //playerClick is activated
-  $(".petal").on("click", playerClick)
+  $(".petal").on("click", playerClick);
+
+
+  //display the sequence to player
+ function displayPetal(i){
+   //make the dom flash the color
+   if (i < simonSequence.length){
+     $(simonSequence[i]).fadeIn(1000).fadeOut(1000);
+     //set delay before playing next sequence
+     setTimeout(function(){
+       displayPetal(i +1);
+     }, 800);
+   }
+
+
+ }
 
 }); //end of document
