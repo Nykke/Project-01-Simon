@@ -32,6 +32,36 @@ $(document).ready(function(){
       $("#clock").html(seconds);
     }
 
+    simonSequence = [];
+    playerSequence = [];
+
+    //random petal selection sequence
+    var randomColor = sequenceArray[Math.floor(Math.random() * sequenceArray.length)];
+    switch(randomColor){
+      case "red":
+      $("#red").fadeOut(1000).fadeIn(1000);
+      audio[1].play();
+      break;
+      case "blue":
+      $("#blue").fadeOut(1000).fadeIn(1000);
+      audio[2].play();
+      break;
+      case "green":
+      $("#green").fadeOut(1000).fadeIn(1000);
+      audio[3].play();
+      break;
+      case "yellow":
+      $("#yellow").fadeOut(1000).fadeIn(1000);
+      audio[4].play();
+      break;
+      default:
+      break;
+    }
+
+    //simonSequence is stored
+    simonSequence.push(randomColor);
+    console.log(simonSequence);
+
 
 
   });
