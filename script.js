@@ -19,4 +19,21 @@ $(document).ready(function(){
   var seconds = 0;
   var clockId;
 
+  //player should be able to hit the start button ONLY to start Simon game
+  //once the game has started user should be able to see one random petal light up
+  $("#start").click(function(){
+
+    //interval set for timer
+    clockId = setInterval(updateClock, 1000);
+
+    //start timer
+    function updateClock(){
+      seconds++;
+      $("#clock").html(seconds);
+    }
+
+
+
+  });
+
 });
