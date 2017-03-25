@@ -77,9 +77,22 @@ $(document).ready(function(){
         }
     }
     playerSequence = [];
+    //generate new value to push to simonSequence iff player's last choice equals the simonSequence's last value
     simonSequence.push(sequenceArray[Math.floor(Math.random() * sequenceArray.length)]);
 
   }
 }
+
+function playerClick(){
+    //push value of id to compare
+    playerSequence.push($(this).attr("id"));
+    console.log(playerSequence);
+    //creates the fadeout/fadein on the petal when clicked by player
+    $(this).fadeOut(1000).fadeIn(1000);
+    sequenceCheck();
+
+  }
+  //playerClick is activated
+  $(".petal").on("click", playerClick)
 
 }); //end of document
