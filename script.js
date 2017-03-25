@@ -62,8 +62,24 @@ $(document).ready(function(){
     simonSequence.push(randomColor);
     console.log(simonSequence);
 
-
-
   });
 
-});
+  //checks whose turn it is
+  function sequenceCheck() {
+    //computer's turn
+    if (simonSequence.length === playerSequence.length){
+      for(var i=0; i < simonSequence.length; i++){
+        //checks for correct answer
+        if (simonSequence[i] !== playerSequence[i]) {
+          alert("INCORRECT, GAME OVER!");
+          audioIncorrect.play();
+          return;
+        }
+    }
+    playerSequence = [];
+    simonSequence.push(sequenceArray[Math.floor(Math.random() * sequenceArray.length)]);
+
+  }
+}
+
+}); //end of document
