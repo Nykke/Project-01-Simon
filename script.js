@@ -19,7 +19,7 @@ $(document).ready(function(){
   var seconds = 0;
   var clockId;
 
-  function randomPetal(){
+  function animatePetal(){
   //random petal selection sequence
   var randomColor = sequenceArray[Math.floor(Math.random() * sequenceArray.length)];
   switch(randomColor){
@@ -63,7 +63,7 @@ $(document).ready(function(){
     simonSequence = [];
     playerSequence = [];
 
-    randomPetal();
+    animatePetal();
 
   });
 
@@ -81,7 +81,7 @@ $(document).ready(function(){
     }
     playerSequence = [];
     addNextPetal();
-    randomPetal();
+    animatePetal();
    }
 }
 
@@ -93,9 +93,9 @@ $(document).ready(function(){
         i++;
       }
       while( i < 5);
-    simonSequence.push(sequenceArray[Math.floor(Math.random() * sequenceArray.length)]);
+      simonSequence.push(sequenceArray[Math.floor(Math.random() * sequenceArray.length)]);
     //show the player new color
-    randomPetal(); 
+    animatePetal();
   }
 
 
@@ -105,8 +105,9 @@ $(document).ready(function(){
     playerSequence.push($(this).attr("id"));
     console.log(playerSequence);
     //creates the fadeout/fadein on the petal when clicked by player
-    $(this).fadeOut(600).fadeIn(600);
+    $(this).fadeOut(700).fadeIn(700);
     sequenceCheck();
+    animatePetal();
   }
   //playerClick is activated
   $(".petal").on("click", playerClick);
@@ -116,11 +117,11 @@ $(document).ready(function(){
  function displayPetal(i){
    //make the dom flash the color
    if (i < simonSequence.length){
-     (simonSequence[i]).fadeIn(1000).fadeOut(1000);
+     (simonSequence[i]).fadeIn(8000).fadeOut(800);
      //set delay before playing next sequence
      setTimeout(function(){
        displayPetal(i +1);
-     }, 1000);
+     }, 3500);
    }
  }
 
