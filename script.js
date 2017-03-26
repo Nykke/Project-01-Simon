@@ -19,6 +19,34 @@ $(document).ready(function(){
   var seconds = 0;
   var clockId;
 
+  function randomPetal(){
+  //random petal selection sequence
+  var randomColor = sequenceArray[Math.floor(Math.random() * sequenceArray.length)];
+  switch(randomColor){
+    case "red":
+    $("#red").fadeOut(1000).fadeIn(1000);
+    audio[1].play();
+    break;
+    case "blue":
+    $("#blue").fadeOut(1000).fadeIn(1000);
+    audio[2].play();
+    break;
+    case "green":
+    $("#green").fadeOut(1000).fadeIn(1000);
+    audio[3].play();
+    break;
+    case "yellow":
+    $("#yellow").fadeOut(1000).fadeIn(1000);
+    audio[4].play();
+    break;
+    default:
+    break;
+  }
+  //simonSequence is stored
+  simonSequence.push(randomColor);
+  console.log(simonSequence);
+}
+
   //player should be able to hit the start button ONLY to start Simon game
   //once the game has started user should be able to see one random petal light up
   $("#start").click(function(){
@@ -35,32 +63,7 @@ $(document).ready(function(){
     simonSequence = [];
     playerSequence = [];
 
-    //random petal selection sequence
-    var randomColor = sequenceArray[Math.floor(Math.random() * sequenceArray.length)];
-    switch(randomColor){
-      case "red":
-      $("#red").fadeOut(1000).fadeIn(1000);
-      audio[1].play();
-      break;
-      case "blue":
-      $("#blue").fadeOut(1000).fadeIn(1000);
-      audio[2].play();
-      break;
-      case "green":
-      $("#green").fadeOut(1000).fadeIn(1000);
-      audio[3].play();
-      break;
-      case "yellow":
-      $("#yellow").fadeOut(1000).fadeIn(1000);
-      audio[4].play();
-      break;
-      default:
-      break;
-    }
-
-    //simonSequence is stored
-    simonSequence.push(randomColor);
-    console.log(simonSequence);
+    randomPetal();
 
   });
 
@@ -71,26 +74,39 @@ $(document).ready(function(){
       for(var i=0; i < simonSequence.length; i++){
         //checks for correct answer
         if (simonSequence[i] !== playerSequence[i]) {
-          alert("INCORRECT, GAME OVER!");
           audioIncorrect.play();
+          alert("INCORRECT, GAME OVER!");
           return;
         }
     }
     playerSequence = [];
-    //generate new value to push to simonSequence iff player's last choice equals the simonSequence's last value
-    simonSequence.push(sequenceArray[Math.floor(Math.random() * sequenceArray.length)]);
-
-  }
+    addNextPetal();
+    randomPetal();
+   }
 }
 
-function playerClick(){
+//generate new value to push to simonSequence iff player's last choice equals the simonSequence's last value
+  function addNextPetal() {
+    var i=0;
+      do {
+        i > sequenceArray.length + i;
+        i++;
+      }
+      while( i < 5);
+    simonSequence.push(sequenceArray[Math.floor(Math.random() * sequenceArray.length)]);
+    //show the player new color
+    randomPetal(); 
+  }
+
+
+
+  function playerClick(){
     //push value of id to compare
     playerSequence.push($(this).attr("id"));
     console.log(playerSequence);
     //creates the fadeout/fadein on the petal when clicked by player
-    $(this).fadeOut(500).fadeIn(500);
+    $(this).fadeOut(600).fadeIn(600);
     sequenceCheck();
-
   }
   //playerClick is activated
   $(".petal").on("click", playerClick);
@@ -100,14 +116,12 @@ function playerClick(){
  function displayPetal(i){
    //make the dom flash the color
    if (i < simonSequence.length){
-     $(simonSequence[i]).fadeIn(1000).fadeOut(1000);
+     (simonSequence[i]).fadeIn(1000).fadeOut(1000);
      //set delay before playing next sequence
      setTimeout(function(){
        displayPetal(i +1);
-     }, 800);
+     }, 1000);
    }
-
-
  }
 
 }); //end of document
