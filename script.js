@@ -81,7 +81,6 @@ $(document).ready(function(){
     }
     playerSequence = [];
     addNextPetal();
-    animatePetal();
    }
 }
 
@@ -93,7 +92,6 @@ $(document).ready(function(){
         i++;
       }
       while( i < 5);
-      simonSequence.push(sequenceArray[Math.floor(Math.random() * sequenceArray.length)]);
     //show the player new color
     animatePetal();
   }
@@ -105,9 +103,8 @@ $(document).ready(function(){
     playerSequence.push($(this).attr("id"));
     console.log(playerSequence);
     //creates the fadeout/fadein on the petal when clicked by player
-    $(this).fadeOut(700).fadeIn(700);
+    $(this).fadeOut(300).fadeIn(300).fadeIn(300);
     sequenceCheck();
-    animatePetal();
   }
   //playerClick is activated
   $(".petal").on("click", playerClick);
@@ -117,12 +114,12 @@ $(document).ready(function(){
  function displayPetal(i){
    //make the dom flash the color
    if (i < simonSequence.length){
-     (simonSequence[i]).fadeIn(8000).fadeOut(800);
-     //set delay before playing next sequence
-     setTimeout(function(){
-       displayPetal(i +1);
-     }, 3500);
+     (simonSequence[i]).fadeIn(700).fadeOut(700);
    }
+   //set delay before playing next sequence
+   setTimeout(function(){
+     displayPetal(i +1);
+   }, 40000);
  }
 
 }); //end of document
