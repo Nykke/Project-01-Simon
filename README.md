@@ -6,22 +6,17 @@
    - jQuery
 
 ### Simon User Stories:
-- User will be given the option of a timed or untimed game.
-- In the timed game, User will be scored, while in the untimed game no score will be collected.
-- User will initialize the game by pressing the "Start" button.
-- User will be able to pause game sequence after it has started by pressing the "Pause" button.
-- User will advance to the next level of the game after successfully completing the repetition sequence provided.
-- User will be alerted if an incorrect repetition sequence has been entered and will repeat level until successful.
-- Each level of the game will increase in difficulty providing User with sufficient memory challenges.
+- As a User, I will be able to initialize the game by pressing the "Start" button.
+- As a User, I will be able to start and pause the timer
+- As a User, I will be able to advance to the next level of the game after successfully completing the repetition sequence provided.
+- As a User, I will be alerted if an incorrect repetition sequence has been entered and will repeat level until successful.
 
 
 ### Current Unsolved problems:
-- At the moment I can only get the petals to light up once the "start" button is clicked.
-- It logs the user clicked the petals, it just won't start a new sequence.
-- When the user hits an incorrect petal the "if" statement gets overridden.
+- When the user hits an incorrect petal the "if" statement runs the complete sequenceCheck before telling player the moves were incorrect.
+
 
 ### Questions:
-
 ### How did you plan your project:
 
 For my project I experimented with different shapes and then explored the idea of creating something that was a little less traditional for simon, that’s where I came up with the idea of having a mini garden scene.
@@ -35,20 +30,18 @@ I would definitely have pseudo coded better, I think that was my downfall for th
 ### What are you most proud of:
 
 I’m most proud of my CSS, I worked very hard on it and I’m happy with the results. I was thrilled when I got my petals to rotate around the center into their correct positions.
-
+I'm also proud of the fact that I came back to this game and worked through the logic to get this game to actually work the way it's supposed to oppose to when I completed it in February, 2017 and it was only calling the first sequence.
 
 ### What did you learn:
 - Pseudo coding is key, having a set plan is key when it comes to building something of this magnitude.
 - I learned how to make and manipulate shapes in CSS to make objects and characters.
 - When tackling a huge project, it's best to work on one feature at a time instead of thinking of it as a whole. This was my problem with the functionality.
-
+- Know my limitations and the importance of splitting something as complex as this game into various logic sections to better track and understand what is going on.
 
 ### What would you do next:
-- fix the issue of where the sequence doesn’t show up after user clicks the correct petal.
-- fix the issue of the user being able to click the incorrect petal and the alter “incorrect” doesn’t show up.
-- add audio
+- fix the incorrect conditional to not wait until the sequence is complete
 - have the sky continuously move while game is open
-- fix the body and footer overflow issue
 - have game add more sequences in next round
-- add the pause feature
-- add the timer feature
+- add the pause feature for whole game
+
+updated March 27, 2017
