@@ -14,6 +14,7 @@
 
 ### Current Unsolved problems:
 - When the user hits an incorrect petal the "if" statement runs the complete sequenceCheck before telling player the moves were incorrect.
+- Win function needs work 
 
 
 ### Questions:
