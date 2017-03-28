@@ -72,6 +72,7 @@ $(document).ready(function() {
             }
             playerSequence = [];
             addNextPetal();
+            winGame(); 
 
         }
     }
@@ -123,7 +124,11 @@ $(document).ready(function() {
         }, i * 1000);
     }
 
-
-
+    //win the game
+     function winGame(){
+       if ("#petal" === 15){
+         alert("You win!");
+       }
+     }
 
 }); //end of document
