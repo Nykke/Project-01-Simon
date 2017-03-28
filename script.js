@@ -11,6 +11,7 @@ $(document).ready(function(){
   //set game and player arrays
   var simonSequence = [];
   var playerSequence = [];
+  matchingArrays = true;
 
   //set sequence variables
   var colorsArray = ["red", "blue", "yellow", "green"];
@@ -23,7 +24,7 @@ $(document).ready(function(){
   //loops through the simonSequence and then shows the petals on the dom to player
   function animatePetals(){
     for (var i = 0; i < simonSequence.length; i++){
-      displayPetal(i); 
+      displayPetal(i);
     }
     console.log("simonSequence");
     console.log(simonSequence);
@@ -34,13 +35,18 @@ $(document).ready(function(){
   $("#start").click(function(){
 
     //interval set for timer
+    clockId = setInterval(updateClock, 1000);
+
+    //start timer
     function updateClock(){
       seconds++;
       $("#clock").html(seconds);
     }
-    // clearInterval(clockId) will clear the timer
-    clockId = setInterval(updateClock, 1000);
-    //start timer
+
+    $("#pause").click(function (){
+      clearInterval(clockId); 
+    });
+
 
     simonSequence = [];
     playerSequence = [];
@@ -57,6 +63,7 @@ $(document).ready(function(){
       for(var i=0; i < simonSequence.length; i++){
         //checks for correct answer
         if (simonSequence[i] !== playerSequence[i]) {
+          matchingArrays = false;
           audioIncorrect.play();
           alert("INCORRECT, GAME OVER!");
           return;
