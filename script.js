@@ -13,57 +13,40 @@ $(document).ready(function(){
   var playerSequence = [];
 
   //set sequence variables
-  var sequenceArray = ["red", "blue", "yellow", "green"];
+  var colorsArray = ["red", "blue", "yellow", "green"];
 
   //set timer
   var seconds = 0;
   var clockId;
 
-  function animatePetal(){
-  //random petal selection sequence
-  var randomColor = sequenceArray[Math.floor(Math.random() * sequenceArray.length)];
-  switch(randomColor){
-    case "red":
-    $("#red").fadeOut(1000).fadeIn(1000);
-    audio[1].play();
-    break;
-    case "blue":
-    $("#blue").fadeOut(1000).fadeIn(1000);
-    audio[2].play();
-    break;
-    case "green":
-    $("#green").fadeOut(1000).fadeIn(1000);
-    audio[3].play();
-    break;
-    case "yellow":
-    $("#yellow").fadeOut(1000).fadeIn(1000);
-    audio[4].play();
-    break;
-    default:
-    break;
+
+  //loops through the simonSequence and then shows the petals on the dom to player
+  function animatePetals(){
+    for (var i = 0; i < simonSequence.length; i++){
+      displayPetal(i); 
+    }
+    console.log("simonSequence");
+    console.log(simonSequence);
+
   }
-  //simonSequence is stored
-  simonSequence.push(randomColor);
-  console.log(simonSequence);
-}
 
   //player should be able to hit the start button ONLY to start Simon game
-  //once the game has started user should be able to see one random petal light up
   $("#start").click(function(){
 
     //interval set for timer
-    clockId = setInterval(updateClock, 1000);
-
-    //start timer
     function updateClock(){
       seconds++;
       $("#clock").html(seconds);
     }
+    // clearInterval(clockId) will clear the timer
+    clockId = setInterval(updateClock, 1000);
+    //start timer
 
     simonSequence = [];
     playerSequence = [];
 
-    animatePetal();
+    //once the game has started user should be able to see one random petal light up
+    addNextPetal();
 
   });
 
@@ -86,24 +69,18 @@ $(document).ready(function(){
 
 //generate new value to push to simonSequence iff player's last choice equals the simonSequence's last value
   function addNextPetal() {
-    var i=0;
-      do {
-        i > sequenceArray.length + i;
-        i++;
-      }
-      while( i < 5);
+    var randomColor = colorsArray[Math.floor(Math.random() * colorsArray.length)];
+    //simonSequence is stored
+    simonSequence.push(randomColor);
     //show the player new color
-    animatePetal();
+    animatePetals();
   }
-
-
 
   function playerClick(){
     //push value of id to compare
     playerSequence.push($(this).attr("id"));
+    console.log("Player Sequence");
     console.log(playerSequence);
-    //creates the fadeout/fadein on the petal when clicked by player
-    $(this).fadeOut(300).fadeIn(300).fadeIn(300);
     sequenceCheck();
   }
   //playerClick is activated
@@ -112,14 +89,31 @@ $(document).ready(function(){
 
   //display the sequence to player
  function displayPetal(i){
-   //make the dom flash the color
-   if (i < simonSequence.length){
-     (simonSequence[i]).fadeIn(700).fadeOut(700);
-   }
-   //set delay before playing next sequence
-   setTimeout(function(){
-     displayPetal(i +1);
-   }, 40000);
+   setTimeout( function(){
+     switch(simonSequence[i]){
+       case "red":
+         $("#red").fadeOut(500).fadeIn(500);
+         audio[1].play();
+         break;
+       case "blue":
+         $("#blue").fadeOut(500).fadeIn(500);
+         audio[2].play();
+         break;
+       case "green":
+         $("#green").fadeOut(500).fadeIn(500);
+         audio[3].play();
+         break;
+       case "yellow":
+         $("#yellow").fadeOut(500).fadeIn(500);
+         audio[4].play();
+         break;
+       default:
+         break;
+       }
+       //delay before showing next sequence
+   }, i * 1000);
  }
+
+
 
 }); //end of document
