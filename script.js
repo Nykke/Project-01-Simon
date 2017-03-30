@@ -19,6 +19,8 @@ $(document).ready(function() {
     //set timer
     var seconds = 0;
     var clockId;
+    //this is going to add a delay to compare the sequences for the incorrect answer check
+    var roundNumber = 0;
 
 
     //loops through the simonSequence and then shows the petals on the dom to player
@@ -48,6 +50,11 @@ $(document).ready(function() {
         });
 
 
+        //setting rounds up
+        roundNumber = 0;
+        roundNumber++;
+
+
         simonSequence = [];
         playerSequence = [];
 
@@ -58,23 +65,26 @@ $(document).ready(function() {
 
     //checks whose turn it is
     function sequenceCheck() {
-        //computer's turn
-        if (simonSequence.length === playerSequence.length) {
-            for (var i = 0; i < simonSequence.length; i++) {
-                // winGame();
-                //checks for correct answer
-                if (simonSequence[i] !== playerSequence[i]) {
-                    matchingArrays = false;
-                    audioIncorrect.play();
-                    alert("INCORRECT, GAME OVER!");
-                    return;
-                }
-            }
-            playerSequence = [];
-            addNextPetal();
-            winGame(); 
 
+        console.log(`Top of sequenceCheck: Simon:${simonSequence[roundNumber]} Player:${playerSequence[roundNumber]}`)
+
+        //checks for incorrect answer
+        if (simonSequence[roundNumber] !== playerSequence[roundNumber]) {
+          console.log(`Condish: Simon:${simonSequence[roundNumber]} Player:${playerSequence[roundNumber]}`)
+          matchingArrays = false;
+          audioIncorrect.play();
+          alert("INCORRECT, GAME OVER!");
+          return;
         }
+
+      //check for correct answer
+      if (simonSequence.length === playerSequence.length) {
+
+        playerSequence = [];
+        addNextPetal();
+        winGame();
+
+      }
     }
 
     //generate new value to push to simonSequence iff player's last choice equals the simonSequence's last value
@@ -82,6 +92,7 @@ $(document).ready(function() {
         var randomColor = colorsArray[Math.floor(Math.random() * colorsArray.length)];
         //simonSequence is stored
         simonSequence.push(randomColor);
+        roundNumber++;
         //show the player new color
         animatePetals();
     }
@@ -91,6 +102,7 @@ $(document).ready(function() {
         playerSequence.push($(this).attr("id"));
         console.log("Player Sequence");
         console.log(playerSequence);
+        roundNumber =+0
         sequenceCheck();
     }
     //playerClick is activated
